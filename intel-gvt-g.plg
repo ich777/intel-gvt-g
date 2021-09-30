@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "intel-gvt-g">
 <!ENTITY author    "ich777">
-<!ENTITY version   "2021.09.17">
+<!ENTITY version   "2021.09.30">
 <!ENTITY md5       "b319ccdd00a9f1c536e4aab15b6eafc2">
 <!ENTITY launch    "Settings/&name;-main">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.9.2" support="https://forums.unraid.net/topic/108650-plugin-intel-gvt-g/">
 
 <CHANGES>
+
+###2021.09.30
+- Fixed error message from check for old packages
 
 ###2021.09.17
 - Fixed plugin to escape variables properly
@@ -147,7 +150,7 @@ if [ ! "$(grep "blacklist" /boot/config/modprobe.d/i915.conf 2>/dev/null)" ]; th
 fi
 
 #Check for old packages
-rm -rf $(ls -d &plugin;/packages/* | grep -v "${KERNEL_V%%-*}")
+rm -rf $(ls -d &plugin;/packages/* 2>/dev/null | grep -v "${KERNEL_V%%-*}")
 
 download() {
 #Download GVT-g Package
