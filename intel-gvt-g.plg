@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "intel-gvt-g">
 <!ENTITY author    "ich777">
-<!ENTITY version   "2021.11.03">
-<!ENTITY md5       "b319ccdd00a9f1c536e4aab15b6eafc2">
+<!ENTITY version   "2022.05.02">
+<!ENTITY md5       "fde9145be48115e8738cc40ee0e91b37">
 <!ENTITY launch    "Settings/&name;-main">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" min="6.9.2" support="https://forums.unraid.net/topic/108650-plugin-intel-gvt-g/">
 
 <CHANGES>
+
+###2022.05.02
+- Fixed GuC/HuC description and drop-down menu for Guc/HuC
 
 ###2021.11.03
 - Fixed error messages on boot
